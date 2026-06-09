@@ -1,0 +1,18 @@
+<section class="region">
+
+    <h1>Kanto Region Gym Leaders</h1>
+
+    <div class="motto-box">
+        <h3>Gym Leader Motto</h3>
+        <p>{{ selectedMotto }}</p>
+    </div>
+
+    <div class="grid">
+        @for (leader of gymLeaders(); track leader.name) {
+            <app-leader-info 
+            [leader]="leader" 
+            (showMotto)="onReceiveMotto($event)">
+            </app-leader-info>
+        }
+    </div>
+</section>

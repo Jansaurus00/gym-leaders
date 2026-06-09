@@ -1,0 +1,19 @@
+<div class="card"[style.border-color]="leader.color">
+
+    <h2 [style.color]="leader.color">{{ leader.name }}</h2>
+
+    <p><strong>Location: </strong>{{ leader.location }}</p>
+    <p><strong>Type: </strong>{{ leader.type }}</p>
+    <p><strong>Badge: </strong>{{ leader.badge }}</p>
+    
+    <h3>Pokemon Team</h3>
+    <ul>
+        @for (pokemon of leader.team; track pokemon) {
+            <li>{{ pokemon.name }} (Lv. {{ pokemon.level }})</li>
+        }
+    </ul>
+
+    <button (click)="onShowMotto()">
+    Motto
+    </button>
+</div>
